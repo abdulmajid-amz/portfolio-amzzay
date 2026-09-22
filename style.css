@@ -1,0 +1,127 @@
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --border: #ccc;
+  --shadow:   #8a8a8a;
+  --secondary:  #262626;
+  --bg-primary:  #bfd9ff;
+  --bg-secondary:  #e5efff;
+}
+body.darkmode {
+  --bg: #171717;
+  --card: #404040;
+  --border: #525252;
+  --shadow:   #0d0d0d;
+  --secondary:  #fafafa;
+  --bg-primary:  #392b55;
+  --bg-secondary:  #241d32;
+}
+* {margin: 0; padding: 0; box-sizing: border-box; text-transform: capitalize; -webkit-tap-highlight-color: transparent; text-decoration: none; scroll-behavior: smooth;}
+h1, h2, h3 {font-weight: 800;}
+.theme-overlay {position: fixed; top: 0; left: 0; width: 100%; height: 0; background-color: var(--bg-target, #171717); z-index: 9999; pointer-events: none; transition: height 0.6s cubic-bezier(0.77, 0, 0.175, 1);}
+.theme-overlay.slide-down {height: 100vh;}
+.theme-overlay.slide-out {top: auto; bottom: 0; height: 0;}
+.fade-init {opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+.fade-init.fade-in {opacity: 1; transform: translateY(0);}
+body {min-width: 300px; width: 100%; background: var(--bg); transition: background-color 0.4s ease-in-out; font-family: 'Poppins';}
+.navbar {position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; width: 100%; height: 3rem; background: var(--bg); padding: 0 1rem; box-shadow: 0 4px 8px var(--shadow); max-width: 1100px; border-radius: 20px; margin: 0 auto; z-index: 888;}
+.navbar .navbar-logo {color: var(--secondary);}
+.navbar .navbar-nav {position: absolute; top: 4rem; right: -100%; width: 45%; display: flex; flex-direction: column; padding: 1rem; background: var(--bg); box-shadow: 0 4px 8px var(--shadow); border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; z-index: 887; transition: right 0.4s ease-in-out;}
+.navbar .navbar-nav.active {right: 1rem;}
+.navbar .navbar-nav a {color: var(--secondary); font-weight: 500; margin: 0.5rem; cursor: pointer;}
+.navbar .navbar-group {display: flex; gap: 1rem; align-items: center; position: relative;}
+.navbar .navbar-group .navbar-theme {font-size: 1.8rem; position: relative; top: 0.2rem; color: var(--secondary);}
+.navbar .navbar-group .navbar-extra { width: 1.4rem; height: 17px; position: relative; cursor: pointer; border: none; background: transparent; padding: 0; outline: none;}
+.navbar .navbar-group .navbar-extra span {display: block; width: 100%; height: 3px; background: var(--secondary); border-radius: 3px; position: absolute; left: 0; transform-origin: center; transition: 0.4s ease-in-out;}
+.navbar .navbar-group .navbar-extra span:nth-child(1) {top: 0;}
+.navbar .navbar-group .navbar-extra span:nth-child(2) {top: 50%; transform: translateY(-50%);}
+.navbar .navbar-group .navbar-extra span:nth-child(3) {bottom: 0;}
+.navbar .navbar-group .navbar-extra.active span:nth-child(1) {top: 50%; transform: translateY(-50%) rotate(45deg);}
+.navbar .navbar-group .navbar-extra.active span:nth-child(2) {transform: translateY(-50%) scale(0); opacity: 0;}
+.navbar .navbar-group .navbar-extra.active span:nth-child(3) {bottom: 50%; transform: translateY(50%) rotate(-45deg);}
+/* home section*/
+.home {position: sticky; top: 0; z-index: 1; padding-top: 5rem; padding-left: 1rem; padding-right: 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at center, var(--bg-primary) 0%, var(--bg-secondary) 30%, var(--bg) 80%); width: 100%; height: 100vh;}
+.home h1 {font-size: 4.5rem; color: var(--secondary); font-weight: 800; text-shadow: 0 4px 9px var(--shadow);}
+.home .social {display: flex; gap: 1rem; justify-content: center; width: 100%; max-width: 300px;}
+.home .social a {background: var(--bg); color: var(--secondary); font-size: 1.4rem; padding: 0.4rem 0.6rem; border-radius: 10px; box-shadow: 0 4px 6px var(--shadow);}
+.home .social a:active {transform: translate(0, 2px); box-shadow: 0 2px 4px var(--shadow);}
+.home .cta {display: flex; gap: 0.5rem; margin-top: 1rem;}
+.home .cta a {font-weight: 500; color: var(--secondary); background: var(--bg); padding: 0.4rem 0.6rem; font-size: 0.8rem; box-shadow: 0 4px 6px var(--shadow); border-radius: 10px;}
+.home .cta a:active {transform: translate(0, 2px); box-shadow: 0 2px 4px var(--shadow);}
+/* about section */
+.about, .project, .mini-game, .contact {position: relative; z-index: 2; background: var(--bg); width: 100%; scroll-margin-top: 1.5rem; max-width: 1100px; margin: 0 auto; padding: 0 1rem;}
+.about {max-width: 100%;}
+.about .column {display: flex; flex-direction: column; max-width: 1100px; width: 100%; align-items: center; justify-content: center; height: 100vh; margin: 0 auto;}
+.about .column .image {position: relative; }
+.about .column .image::after {content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 13%; background: linear-gradient(to top, var(--bg) 10%, transparent 100%); z-index: 1;}
+.about .column .image img {width: 100%; max-width: 300px;}
+.about .column .image .circle {position: absolute; top: 3%; left: 10%; right: 0; width: 250px; height: 250px; border-radius: 50%; background: var(--secondary); z-index: -1; box-shadow: 0 0 20px var(--secondary); animation: pulse 3s ease-in-out infinite;}
+/* Styling & Efek Kursor Berkedip untuk Typing Animation */
+.typing {display: inline-block; color: var(--secondary); font-size: 1.2rem; font-weight: 600; border-right: 2px solid var(--secondary); padding-right: 4px; white-space: nowrap; animation: blinkCursor 0.7s infinite;}
+/* Animasi kursor kedip */
+@keyframes blinkCursor {
+  0%, 100% {border-color: transparent;}
+  50% {border-color: var(--secondary);}
+}
+@keyframes pulse {
+  0% {box-shadow: 0 0 20px var(--secondary); transform: scale(1);}
+  50% {box-shadow: 0 0 30px var(--secondary); transform: scale(1.03);}
+  100% {box-shadow: 0 0 20px var(--secondary); transform: scale(1);}
+}
+.about .column .title {max-width: 500px; color: var(--secondary); text-align: justify; margin-top: 3rem;}
+/* project section */
+.project {position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-bottom: 4rem; scroll-margin-top: 5rem;}
+.project h2 {font-size: 2rem; font-weight: 800; color: var(--secondary);}
+.project p {text-align: center; font-weight: 400; color: var(--secondary); margin-bottom: 2rem;}
+.slider-container {width: calc(100% - 1px); max-width: 1200px; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 20px var(--shadow); cursor: pointer;}
+.slider-wrapper {display: flex; height: 55vh; max-height: 550px; animation: scrollLoop 20s linear infinite;}
+.slider-wrapper:hover {animation-play-state: paused;}
+.slide {min-width: 100%; height: 100%;}
+.slide img {width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s ease;}
+.slide img:hover { transform: scale(1.02);}
+/*mini game section */
+.mini-game {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mini-game h2 {color: var(--secondary); font-size: 2rem; font-weight: 800;}
+.mini-game p {color: var(--secondary);}
+.mini-game a {font-weight: 400; background: var(--secondary); color: var(--bg); padding: 0.5rem 1rem; border-radius: 24px; box-shadow: 0 4px 8px var(--shadow); margin-top: 0.8rem;}
+.mini-game a:active {transform: translate(0, 2px); box-shadow: 0 2px 4px var(--shadow);}
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-500%); }
+}
+.zoom-overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; backdrop-filter: blur(5px); -webkit-backdrop-filter: (blur(5px)); background: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 2rem 1.3rem; overflow-y: auto;}
+.zoom-overlay.active { display: flex;}
+.zoom-konten {gap: 15px; display: flex; flex-direction: column; align-items: center; max-width: 900px; width: 100%; gap: 22px;}
+.zoom-konten #zoomedImg {max-width: 100%; max-height: 65vh; width: auto; height: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 0 50px rgba(255,255,255,0.12); margin-top: 3.5rem;}
+.teks-konten {text-align: center; color: var(--secondary); padding: 0 15px;}
+.teks-konten h3 {font-size: 26px; margin-bottom: 10px; font-weight: 600; color: var(--secondary); font-weight: 800;}
+.teks-konten p {text-align: justify; font-size: 16px; line-height: 1.6; color: var(--secondary); font-weight: 600;}
+.close-btn {position: absolute; top: 1rem; right: 2rem; background: var(--bg); border: none; width: 2rem; height: 2rem; border-radius: 50%; font-size: 32px; color: var(--secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; line-height: 1;}
+.close-btn:hover {background: var(--border); transform: rotate(90deg);}
+/* contact section */
+.contact {margin: 0 auto; scroll-margin-top: 4rem; padding-bottom: 2rem;}
+.contact h2 {text-align: center; font-weight: 800; font-size: 2rem; color: var(--secondary);}
+.contact p {margin-bottom: 1rem; font-weight: 400; color: var(--secondary); text-align: center;}
+.contact .group {display: flex; flex-direction: column; gap: 1rem; font-family: 'Poppins';}
+.contact .group input, .contact .group button {padding: 0.8rem ; border-radius: 10px; border: 1px solid var(--border); outline: none;}
+.contact .group textarea {padding: 0.5rem 0.5rem 4rem; border: 1px solid var(--border); border-radius: 10px; outline: none; font-family: 'Poppins';}
+.contact .group button {background: var(--secondary); color: var(--bg);}
+@media (min-width: 850px) {
+  body {font-size: 120%;}
+  .navbar .navbar-group .navbar-extra {display: none;}
+  .navbar .navbar-nav {position: static; width: auto; padding: 0; flex-direction: row; box-shadow: none; border-radius: 0; gap: 1rem;}
+  .home .column {flex-direction: row;}
+  .home h1 {font-size: 8rem;}
+  .home .social a {padding: 1rem 1.5rem; font-size: 2rem;}
+  .home .cta {gap: 1rem;}
+  .home .cta a {font-size: 1.5rem; padding: 0.6rem 0.8rem;}
+  .about .column {display: flex; flex-direction: row-reverse; justify-content: space-between;}
+}

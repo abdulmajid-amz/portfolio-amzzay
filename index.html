@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">    
+	<title>portfolio amzzay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h3>PORTFOLIO.</h3>
+    </div>
+    <div class="navbar-nav">
+      <a href="#home">home</a>
+      <a href="#about">about</a>
+      <a href="#project">project</a>
+      <a href="#mini-game">mini game</a>
+      <a href="#contact">contact</a>
+    </div>
+    <div class="navbar-group">
+      <div class="navbar-theme" id="theme-navbar">
+        <ion-icon name="cloudy-night"></ion-icon>
+      </div>
+      <div class="navbar-extra" id="menu-navbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="home" id="home">
+    <h1>AMZZAY</h1>
+    <div class="social">
+      <a href="https://www.instagram.com/kenal_majid?stkn=c3UxNDJzOG93eDhv">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="tiktok.com/@amzzay">
+        <ion-icon name="logo-tiktok"></ion-icon>
+      </a>
+      <a href="https://www.facebook.com/share/19NzHXz1L3/">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a href="#contact">
+        <ion-icon name="mail-outline"></ion-icon>
+      </a>
+    </div>
+    <div class="cta">
+      <a href="#contact">rekrut saya</a>
+      <a href="CV-abdul-majid.pdf" download>download CV</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+  <div class="about-curtain"></div> <!-- Tambahan tirai -->
+  <div class="column">
+    <div class="image">
+      <img src="pp.png" alt="profile">
+      <span class="circle"></span>
+    </div>
+    <div class="title">
+      <h1>hi, i'm amz</h1>
+      <strong class="typing">frontend developer</strong>
+      <p>saya seorang newbie web developer yang sedang aktif mempelajari hal tentang coding.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="project" id="project">
+    <h2>project saya</h2>
+    <p>semua project belum dihosting/dipublikasikan</p>
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="slide">
+          <img src="project1.jpg" alt="Gambar 1" data-judul="desain landing page kuliner & F&B" data-deskripsi="Tampilan antarmuka website yang menggugah selera, dirancang khusus untuk bisnis kuliner (Food & Beverage). Menonjolkan copywriting promosi yang kuat (Makan Enak. Harga Bersahabat.) dengan tata letak yang bersih, call-to-action (CTA) yang jelas, dan navigasi yang memudahkan pelanggan untuk langsung memesan." loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="project2.jpg" alt="Gambar 2" data-judul="minimalist personal branding & link aggregator" data-deskripsi="Desain micro-landing page modern bergaya link-in-bio untuk kebutuhan personal branding kreator atau komunitas. Mengutamakan fungsionalitas dengan antarmuka minimalis, memungkinkan audiens untuk mengakses berbagai platform media sosial (Discord, TikTok, Facebook, WhatsApp) secara cepat, responsif, dan elegan." loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="project3.jpg" alt="Gambar 3" data-judul="website agrobisnis konsep (farm to table)" data-deskripsi="Portofolio desain website bergaya natural untuk sektor agrikultur atau hasil bumi. Menggunakan hero image yang autentik dipadukan dengan headline (Cabai Segar Dari Kebun Kami), desain ini secara efektif mengomunikasikan kualitas organik, kesegaran produk lokal, dan kedekatan merek dengan alam." loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="project4.jpg" alt="Gambar 4" data-judul="profil bisnis kedai kopi premium" data-deskripsi="Desain beranda situs web coffee shop yang memancarkan estetika hangat, elegan, dan cozy. Didukung oleh tipografi yang klasik dan copywriting persuasif (Temukan Rasa Dalam Setiap Tegukan), halaman ini dirancang untuk memikat visual audiens dan mencerminkan pengalaman menikmati kopi yang premium." loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="project1.jpg" alt="Gambar 1" data-judul="desain landing page kuliner & F&B" data-deskripsi="tampilan antarmuka website yang menggugah selera, dirancang khusus untuk bisnis kuliner (food & beverage). menonjolkan copywriting promosi yang kuat (makan enak. harga bersahabat.) dengan tata letak yang bersih, call-to-action (CTA) yang jelas, dan navigasi yang memudahkan pelanggan untuk langsung memesan." loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="zoom-overlay" id="zoomOverlay">
+      <button class="close-btn" id="closeBtn">&times;</button>
+      <div class="zoom-konten">
+        <img src="" alt="Gambar Perbesar" id="zoomedImg">
+          <div class="teks-konten">
+            <h3 id="judulGambar"></h3>
+            <p id="deskripsiGambar"></p>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mini-game" id="mini-game">
+    <h2>mini game</h2>
+    <p>ingin mencoba game sederhana?</p>
+    <a href="snake.html">mulai game?</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>hubungi saya</h2>
+    <p>jika mempunyai hal yg ingin di diskusikan</p>
+    <form class="group">
+      <input type="text" placeholder="masukkan nama" name="name" required>
+      <input type="email" placeholder="masukkan email" name="email" required>
+      <textarea placeholder="tulis pesan disini" name="message"></textarea>
+      <button type="submit">kirim sekarang</button>
+    </form>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
